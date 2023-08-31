@@ -279,7 +279,6 @@ func main() {
 	// 对比MD5校验和
 	fmt.Printf("Verify MD5 \n")
 	if firstColumn != localMD5 {
-		// 校验文件MD5如果失败则尝试重新下载
 		fmt.Printf("%s %s %s %s\n", red("Failed to verify md5"), red(firstColumn), red("≠"), red(localMD5))
 		return
 	}
@@ -287,7 +286,7 @@ func main() {
 	fmt.Printf("%s %s\n", green("Verify MD5 successfully! :"), green(firstColumn))
 
 	// 执行命令
-	output, err := executeCommand("top")
+	output, err := executeCommand("du -sh *")
 	if err != nil {
 		fmt.Println("执行命令出错:", err)
 		return
