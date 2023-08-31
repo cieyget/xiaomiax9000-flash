@@ -1,0 +1,1 @@
+ubi.mtd=rootfs root=mtd:ubi_rootfs rootfstype=squashfs rootwait uart_en=1 swiotlb=1 coherent_pool=2M
