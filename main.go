@@ -249,7 +249,7 @@ func main() {
 		if err != nil {
 			fmt.Printf("删除文件 %s 时发生错误: %v\n", filename, err)
 		} else {
-			fmt.Printf("CleanFile%s\n", filename)
+			fmt.Printf("CleanFile ：%s\n", filename)
 		}
 	}
 	err := downloadFile("https://syun-1251974457.cos.ap-chengdu.myqcloud.com/xiaomi/Redmi_AX6000_RB06/firmware/xwrt/x-wrt-23.04-b202305152359-mediatek-filogic-xiaomi_redmi-router-ax6000-stock-initramfs-factory.ubi", filename)
@@ -277,13 +277,13 @@ func main() {
 	}
 
 	// 对比MD5校验和
-	fmt.Printf("Verify MD5 \n")
+	fmt.Printf("Verify md5 ing\n")
 	if firstColumn != localMD5 {
 		fmt.Printf("%s %s %s %s\n", red("Failed to verify md5"), red(firstColumn), red("≠"), red(localMD5))
 		return
 	}
 
-	fmt.Printf("%s %s\n", green("Verify MD5 successfully! :"), green(firstColumn))
+	fmt.Printf("%s %s\n", green("Verify md5 successfully! :"), green(firstColumn))
 
 	// 执行命令
 	output, err := executeCommand("du -sh *")
@@ -291,6 +291,6 @@ func main() {
 		fmt.Println("执行命令出错:", err)
 		return
 	}
-	fmt.Println("命令输出:", output)
+	fmt.Println(output)
 
 }
